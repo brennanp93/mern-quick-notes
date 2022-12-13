@@ -32,10 +32,6 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <NewNoteForm addNote={addNote} />
           <NotesPage noteList={noteList} setNoteList={setNoteList}/>
-          {/* <Routes>
-            <Route path="/" element={<NotesPage noteList={noteList} setNoteList={setNoteList} addNote={addNote} />} />
-          </Routes> */}
-
         </>
         :
         <AuthPage setUser={setUser} />

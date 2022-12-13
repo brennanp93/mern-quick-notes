@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-export default function NewNoteForm({addNote}) {
-
+export default function NewNoteForm({ addNote }) {
     const [addedNote, setAddedNote] = useState({
         text: '',
     });
@@ -10,24 +9,25 @@ export default function NewNoteForm({addNote}) {
     }
     function handleSubmit(evt) {
         evt.preventDefault();
-        //handleAddNote ? V
         addNote(addedNote)
         setAddedNote({ text: "" })
     }
     return (
         <>
             <h1>Enter Your New Note</h1>
-            <form onSubmit={handleSubmit}>
-                <input
-                    autoComplete='off'
-                    name="text"
-                    value={addedNote.text}
-                    onChange={handleChange}
-                    placeholder="Add A Note"
+            <div>
+                <form onSubmit={handleSubmit}>
+                    <input
+                        autoComplete='off'
+                        name="text"
+                        value={addedNote.text}
+                        onChange={handleChange}
+                        placeholder="Add A Note"
                     // required
-                />
-                <button type='submit'>Add A Quick Note</button>
-            </form>
+                    />
+                    <button type='submit'>Add A Quick Note</button>
+                </form>
+            </div>
         </>
     );
 }
